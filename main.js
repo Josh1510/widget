@@ -18,6 +18,10 @@ $(window).on("load", function () {
     selector.val("15:30").change();
   } else if ($('select option[value="16:00"]').length) {
     selector.val("16:00").change();
+  } else if ($('select option[value="16:30"]').length) {
+    selector.val("16:30").change();
+  } else if ($('select option[value="17:00"]').length) {
+    selector.val("17:00").change();
   } else if ($('select option[value="17:30"]').length) {
     selector.val("17:30").change();
   } else if ($('select option[value="18:00"]').length) {
