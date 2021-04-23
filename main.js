@@ -40,5 +40,4 @@ $(window).on('load', function () {
     $('.ot-dtp-picker-selector option[value="18"]').remove();
     $('.ot-dtp-picker-selector option[value="19"]').remove();
     $('.ot-dtp-picker-selector option[value="20"]').remove();
-    $('.ot-dtp-picker-selector option[value="21"]').remove();
 });
