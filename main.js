@@ -1,43 +1,23 @@
 $(window).on('load', function () {
-    let selector = $('select[name="Select_0"]');
-    if ($('select option[value="12:00"]').length) {
-        selector.val('12:00').change();
-    } else if ($('select option[value="12:30"]').length) {
-        selector.val('12:30').change();
-    } else if ($('select option[value="13:00"]').length) {
-        selector.val('13:00').change();
-    } else if ($('select option[value="13:30"]').length) {
-        selector.val('13:30').change();
-    } else if ($('select option[value="14:00"]').length) {
-        selector.val('14:00').change();
-    } else if ($('select option[value="14:30"]').length) {
-        selector.val('14:30').change();
-    } else if ($('select option[value="15:00"]').length) {
-        selector.val('15:00').change();
-    } else if ($('select option[value="15:30"]').length) {
-        selector.val('15:30').change();
-    } else if ($('select option[value="16:00"]').length) {
-        selector.val('16:00').change();
-    } else if ($('select option[value="16:30"]').length) {
-        selector.val('16:30').change();
-    } else if ($('select option[value="17:00"]').length) {
-        selector.val('17:00').change();
-    } else if ($('select option[value="17:30"]').length) {
-        selector.val('17:30').change();
-    } else if ($('select option[value="18:00"]').length) {
-        selector.val('18:00').change();
-    } else if ($('select option[value="18:30"]').length) {
-        selector.val('18:30').change();
+    //set the default time here 24hr format
+    let restaurantStartingTime = '12:00';
+
+    //set the maximum group size here
+    let restaurantMaxGroup = 12;
+
+    //This changes the default time to the value of the restaurantStartingTime variable as set above
+    //If we are past the time entered then it will select the time at the top of the list instead
+    let timeSelector = $('select[name="Select_0"]');
+
+    if ($('select option[value="' + restaurantStartingTime + '"]').length) {
+        timeSelector.val(restaurantStartingTime).change();
+    } else {
+        timeSelector.prop('selectedIndex', 0).change();
     }
 
-    //remove options of groups 13+
-
-    $('.ot-dtp-picker-selector option[value="13"]').remove();
-    $('.ot-dtp-picker-selector option[value="14"]').remove();
-    $('.ot-dtp-picker-selector option[value="15"]').remove();
-    $('.ot-dtp-picker-selector option[value="16"]').remove();
-    $('.ot-dtp-picker-selector option[value="17"]').remove();
-    $('.ot-dtp-picker-selector option[value="18"]').remove();
-    $('.ot-dtp-picker-selector option[value="19"]').remove();
-    $('.ot-dtp-picker-selector option[value="20"]').remove();
+    //remove options for groups of x+ based on the restaurantMaxGroup variable set above
+    let i;
+    for (i = 20; i > restaurantMaxGroup; i--) {
+        $('.ot-dtp-picker-selector option[value=' + i + ']').remove();
+    }
 });
