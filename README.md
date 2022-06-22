@@ -1,4 +1,4 @@
-Support is not available from OpenTable if using this code. This script is not
+Support for the booking widget is not available from OpenTable if using this code. This script is not
 maintained or supported by OpenTable.
 
 Any changes to the widget from OpenTables side or browser support may break
